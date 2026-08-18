@@ -37,7 +37,7 @@ a { color: inherit; }
 
 .hero { position: relative; overflow: hidden; min-height: 780px; padding: 190px 0 105px; color: white; background: radial-gradient(circle at 72% 26%, #173e4e 0, transparent 31%), linear-gradient(135deg, var(--navy), #0a2130 62%, #102f3b); }
 .hero::before { content: ""; position: absolute; inset: 0; opacity: .22; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(to right, transparent 5%, black 70%); }
-.terrain { position: absolute; right: -6%; bottom: -5%; width: 65%; height: 70%; opacity: .22; background: repeating-radial-gradient(ellipse at 70% 100%, transparent 0 38px, rgba(185,221,98,.65) 40px 42px, transparent 44px 70px); transform: rotate(-10deg); }
+.terrain { position: absolute; right: -7%; top: 94px; width: 62%; height: 86%; opacity: .17; background: url("assets/scotts-bluff-contours.png") center / contain no-repeat; transform: rotate(8deg); filter: saturate(.8) brightness(1.16); }
 .hero-grid { position: relative; display: grid; grid-template-columns: 1.45fr .7fr; gap: 110px; align-items: end; }
 .eyebrow, .section-kicker { margin: 0 0 22px; text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 700; }
 .eyebrow { color: var(--lime); }
@@ -52,6 +52,8 @@ h1 { max-width: 820px; margin: 0; font-size: clamp(48px, 6.4vw, 82px); }
 .button:hover { transform: translateY(-2px); }
 .button-primary { color: var(--navy); background: var(--lime); }
 .button-primary:hover { background: #c9ed73; }
+.button-outline { color: white; border: 1px solid rgba(255,255,255,.38); }
+.button-outline:hover { color: var(--navy); background: white; }
 .button-text { min-height: auto; padding: 8px 0; color: white; border-bottom: 1px solid rgba(255,255,255,.4); border-radius: 0; }
 .impact-panel { padding: 30px; border: 1px solid rgba(255,255,255,.17); background: rgba(7,21,34,.46); backdrop-filter: blur(12px); box-shadow: 0 28px 80px rgba(0,0,0,.22); }
 .panel-label { margin: 0 0 25px; color: #9db0b9; font-size: 12px; text-transform: uppercase; letter-spacing: .15em; }
@@ -133,14 +135,18 @@ h1 { max-width: 820px; margin: 0; font-size: clamp(48px, 6.4vw, 82px); }
 .live-copy p { margin: 0 0 8px; color: #5a7982; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .live-copy h3 { margin: 0; padding-right: 120px; font-size: 22px; letter-spacing: -.03em; }
 .live-copy > span { position: absolute; right: 28px; bottom: 29px; color: #4f6e77; font-size: 11px; font-weight: 700; }
-.live-card-compact { grid-column: span 4; min-height: 150px; color: white; background: linear-gradient(135deg, #123444, #1c5962); }
+.live-card-compact { position: relative; grid-column: span 4; min-height: 150px; overflow: hidden; color: white; background: linear-gradient(135deg, #123444, #1c5962); }
+.live-card-compact::before { content: ""; position: absolute; inset: -45% -5% -55% 38%; opacity: .09; background: url("assets/scotts-bluff-contours.png") center / contain no-repeat; transform: rotate(18deg); }
+.live-card-compact .live-copy { position: relative; z-index: 1; }
 .live-card-compact:nth-child(6) { background: linear-gradient(135deg, #183443, #315c68); }
 .live-card-compact:nth-child(7) { background: linear-gradient(135deg, #263c45, #5b6d62); }
 .live-card-compact .live-copy { min-height: 150px; padding-top: 34px; }
 .live-card-compact .live-copy p { color: var(--lime); }
 .live-card-compact .live-copy > span { color: #c4d3d7; }
 
-.approach { color: white; background: var(--navy); }
+.approach { position: relative; overflow: hidden; color: white; background: var(--navy); }
+.approach::before { content: ""; position: absolute; width: 620px; height: 820px; right: -210px; top: -300px; opacity: .055; background: url("assets/scotts-bluff-contours.png") center / contain no-repeat; transform: rotate(-18deg); }
+.approach > .shell { position: relative; z-index: 1; }
 .section-heading.inverse .section-kicker { color: var(--lime); }
 .section-heading.inverse > p { color: #9eafb7; }
 .approach-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.14); }
@@ -157,14 +163,16 @@ h1 { max-width: 820px; margin: 0; font-size: clamp(48px, 6.4vw, 82px); }
 .capability-list h3 { font-size: 17px; letter-spacing: -.02em; }
 .capability-list p { color: var(--muted); }
 
-.contact { color: white; background: linear-gradient(115deg, #1b5964, #102e40); }
+.contact { position: relative; overflow: hidden; color: white; background: linear-gradient(115deg, #1b5964, #102e40); }
+.contact::after { content: ""; position: absolute; width: 480px; height: 660px; right: -80px; top: -250px; opacity: .08; background: url("assets/scotts-bluff-contours.png") center / contain no-repeat; transform: rotate(24deg); }
+.contact-inner { position: relative; z-index: 1; }
 .contact-inner { padding-top: 100px; padding-bottom: 100px; }
 .contact .section-kicker { color: var(--lime); }
 .contact h2 { max-width: 850px; }
 .contact p:not(.section-kicker) { max-width: 670px; margin: 24px 0 0; color: #bed0d5; font-size: 18px; }
 .contact-actions { display: flex; align-items: center; gap: 32px; margin-top: 40px; }
 .button-light { color: var(--navy); background: white; }
-.github-link { color: white; text-decoration: none; font-weight: 700; }
+.github-link, .resume-link { color: white; text-decoration: none; font-weight: 700; }
 footer { color: #9aacb5; background: #06121c; }
 footer .shell { display: flex; justify-content: space-between; padding-top: 25px; padding-bottom: 25px; font-size: 12px; }
 footer p { margin: 0; } footer a { text-decoration: none; }
@@ -197,6 +205,7 @@ footer p { margin: 0; } footer a { text-decoration: none; }
   .nav-links.open { display: flex; }
   .nav-contact { border: 0; padding: 0; }
   .hero { padding: 145px 0 75px; }
+  .terrain { right: -42%; top: 70px; width: 118%; height: 58%; opacity: .11; }
   h1 { font-size: 44px; }
   .hero-lede { font-size: 17px; }
   .hero-actions, .contact-actions { align-items: flex-start; flex-direction: column; }
