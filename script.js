@@ -61,7 +61,7 @@ mapDialog?.addEventListener('click', (event) => {
 });
 mapDialog?.addEventListener('close', () => {
   document.body.classList.remove('dialog-open');
-  if (dialogImage) dialogImage.src = '';
+  dialogImage?.removeAttribute('src');
 });
 
 const revealItems = document.querySelectorAll('.reveal');

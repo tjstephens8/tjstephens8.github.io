@@ -172,7 +172,7 @@ h1, h2, h3 { margin-top: 0; font-family: "Manrope", sans-serif; line-height: 1.0
 .live-layout { display: grid; grid-template-columns: 1.08fr .92fr; gap: 92px; align-items: start; }
 .live-feature { background: var(--paper); }
 .live-feature-image { height: 430px; overflow: hidden; }
-.live-feature-image img { width: 100%; height: 100%; object-fit: cover; }
+.live-feature-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 48%; filter: saturate(.88) contrast(1.03); }
 .live-feature-copy { padding: 42px 44px 46px; }
 .live-feature-copy h3 { margin: 0 0 14px; font-size: 38px; }
 .live-feature-copy > p:not(.section-kicker) { margin: 0 0 25px; color: var(--muted); }
