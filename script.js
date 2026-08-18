@@ -1,19 +1,32 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
+const navToggleLabel = navToggle?.querySelector('.sr-only');
+
+const closeNavigation = () => {
+  if (!navToggle || !navLinks) return;
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  if (navToggleLabel) navToggleLabel.textContent = 'Open navigation';
+};
 
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
     navToggle.setAttribute('aria-expanded', String(isOpen));
+    if (navToggleLabel) navToggleLabel.textContent = isOpen ? 'Close navigation' : 'Open navigation';
   });
 
   navLinks.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeNavigation);
   });
 }
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && navLinks?.classList.contains('open')) {
+    closeNavigation();
+    navToggle?.focus();
+  }
+});
 
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
