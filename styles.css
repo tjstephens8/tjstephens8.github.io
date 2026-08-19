@@ -110,6 +110,25 @@ h1, h2, h3 { margin-top: 0; font-family: "Manrope", sans-serif; line-height: 1.0
 .story-support { margin: 24px 0 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .project-tools { margin: 28px 0 0; padding-top: 18px; border-top: 1px solid #c8cec8; color: #46636c; font-size: 11px; font-weight: 700; letter-spacing: .02em; }
 
+.systems-story { position: relative; overflow: hidden; color: var(--paper); background: linear-gradient(135deg, #0a2935 0%, #0d3440 58%, #123d46 100%); }
+.systems-story::after { content: ""; position: absolute; inset: 0; opacity: .055; pointer-events: none; background: url("assets/scotts-bluff-contours.png") right 42% / min(62rem, 72vw) auto no-repeat; }
+.systems-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, .95fr) minmax(28rem, 1.05fr); gap: clamp(3rem, 7vw, 7rem); align-items: center; padding-top: clamp(5rem, 9vw, 8rem); padding-bottom: clamp(5rem, 9vw, 8rem); }
+.systems-copy .story-type, .systems-copy .project-tools { color: var(--lime); }
+.systems-copy h3 { max-width: 13ch; margin: 0 0 1.6rem; color: #fff; font-size: clamp(2.25rem, 4vw, 4.5rem); line-height: .98; }
+.systems-copy .story-lede { color: rgba(255,255,255,.92); }
+.systems-copy .story-support { color: rgba(255,255,255,.7); }
+.systems-copy .project-tools { border-top-color: rgba(255,255,255,.2); }
+.systems-evidence { padding: 1rem 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+.system-track { display: grid; grid-template-columns: minmax(0, 1fr) 8.5rem minmax(0, 1fr); gap: 1.1rem; align-items: center; padding: 1.2rem 0; }
+.system-track + .system-track { border-top: 1px solid rgba(255,255,255,.14); }
+.system-audience, .system-outcome { color: rgba(255,255,255,.72); font-size: .78rem; font-weight: 700; letter-spacing: .06em; line-height: 1.35; text-transform: uppercase; }
+.system-outcome { text-align: right; }
+.system-platform { padding: 1rem .7rem; border: 1px solid rgba(159,199,63,.72); background: rgba(3,18,25,.72); text-align: center; }
+.system-platform small { display: block; color: rgba(255,255,255,.55); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; }
+.system-platform strong { display: block; margin-top: .2rem; color: #fff; font-size: 1rem; }
+.system-role { margin: .8rem 0 0; color: rgba(255,255,255,.58); font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+.system-role span { margin: 0 .4rem; color: var(--lime); }
+
 .case-band { padding: 118px 0; color: white; background: #0a2634; }
 .case-band-grid { display: grid; grid-template-columns: .68fr 1.32fr; gap: 86px; align-items: center; }
 .band-copy .story-type { color: var(--lime); }
@@ -264,6 +283,8 @@ footer a { text-decoration: none; }
   .section-intro { grid-template-columns: 1fr; gap: 20px; padding-bottom: 72px; }
   .section-intro > p:last-child { grid-column: auto; max-width: 650px; }
   .case-story, .case-band-grid { grid-template-columns: 1fr; }
+  .systems-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .systems-copy { max-width: 690px; }
   .case-story { gap: 48px; }
   .permit-evidence { min-height: 610px; }
   .story-copy, .fire-story .story-copy { max-width: 690px; padding-top: 0; }
@@ -322,6 +343,11 @@ footer a { text-decoration: none; }
   .report-window { height: 305px; border-width: 6px; }
   .evidence-flow { left: 24px; right: 18px; bottom: 21px; line-height: 1.7; }
   .story-copy h3, .band-copy h3, .site-review-heading h3 { font-size: 36px; }
+  .systems-copy h3 { font-size: 36px; }
+  .system-track { grid-template-columns: 1fr; gap: .75rem; padding: 1.5rem 0; }
+  .system-platform { width: min(100%, 13rem); }
+  .system-outcome { text-align: left; }
+  .system-role { line-height: 2; text-align: left; }
   .story-lede, .band-copy > p:last-of-type { font-size: 16px; }
   .case-band { padding: 86px 0; }
   .story-stats { grid-template-columns: 1fr 1fr; }
